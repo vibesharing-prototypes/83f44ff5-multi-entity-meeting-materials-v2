@@ -1,0 +1,19 @@
+---
+description: "Rules for maintaining CLAUDE.md for session handoff"
+globs: ["CLAUDE.md"]
+alwaysApply: false
+---
+
+# CLAUDE.md Context Management
+
+Update CLAUDE.md at the end of each session or before deploying.
+
+## Required sections
+1. **Current State** — What version, last updated
+2. **What Was Built** — Changes this session
+3. **Key Decisions** — Why things were done this way
+4. **Known Issues** — Bugs or incomplete items
+5. **Next Steps** — What to work on next
+
+Keep it under 300 lines. This file is auto-imported by VibeSharing
+when deployed, so your team sees the context alongside the prototype.

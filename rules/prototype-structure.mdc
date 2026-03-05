@@ -1,0 +1,15 @@
+---
+description: "How to structure prototype code for easy sharing"
+globs: ["app/**/page.tsx"]
+alwaysApply: false
+---
+
+# Prototype Structure
+
+- Keep each prototype in a single page.tsx when possible
+- Use inline mock data (no external API dependencies)
+- Tailwind CSS only — no CSS modules
+- Dark theme: bg-gray-950, text-white, border-white/10
+- Mock data as constants at top of file
+- Sub-components inline in same file
+- Export default function as the page component
