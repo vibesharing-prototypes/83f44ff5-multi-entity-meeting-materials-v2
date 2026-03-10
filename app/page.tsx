@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import ContextBar from '@/components/ContextBar'
 import HomeContent from '@/components/HomeContent'
-import Sidebar from '@/components/Sidebar'
+import HomeSidePanel from '@/components/HomeSidePanel'
 
 export const metadata: Metadata = { title: 'Home' }
 
@@ -12,9 +12,7 @@ export default function Home() {
         <ContextBar />
         <HomeContent />
       </main>
-      <aside className="w-80 flex-shrink-0 border-l border-slate-200 dark:border-zinc-800 flex flex-col">
-        <Sidebar />
-      </aside>
+      <HomeSidePanel />
     </div>
   )
 }

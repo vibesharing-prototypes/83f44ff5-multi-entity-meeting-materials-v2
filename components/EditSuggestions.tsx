@@ -6,6 +6,16 @@ import EntityLogo from '@/components/EntityLogo'
 import { useAgentActivity } from '@/components/AgentActivityContext'
 import { useProtoState } from '@/components/ProtoStateContext'
 
+function buildEditSteps(connectedApps: string[], affectedSection: string): string[] {
+  return [
+    'Fetching regulatory source data',
+    `Analysing ${affectedSection}`,
+    connectedApps.includes('Minutes') ? 'Drafting updates in Minutes' : 'Preparing document update',
+    connectedApps.includes('Boards NextGen') ? 'Syncing with Boards NextGen' : 'Applying to board pack',
+    'Running cross-entity consistency check',
+  ]
+}
+
 const SOURCE_CONFIG: Record<EditSuggestion['sourceType'], { className: string }> = {
   regulation: { className: 'text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800' },
   market: { className: 'text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800' },
@@ -196,6 +206,7 @@ export default function EditSuggestions() {
             entityShortName: entity.shortName,
             title: suggestion.title,
             sectionTitle: suggestion.affectedSection,
+            workflowSteps: buildEditSteps(entity.connectedApps, suggestion.affectedSection),
           })
         : null
 
@@ -203,9 +214,8 @@ export default function EditSuggestions() {
       setCardStatus(prev => ({ ...prev, [id]: 'applied' }))
       if (jobId && agentActivity) {
         agentActivity.completeJob(jobId)
-        setTimeout(() => agentActivity.removeJob(jobId), 4000)
       }
-    }, 10000)
+    }, 30000)
   }
 
   const stateSuggestions = EDIT_SUGGESTIONS.filter(s => s.states.includes(state))

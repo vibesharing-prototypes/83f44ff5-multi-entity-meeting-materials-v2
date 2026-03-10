@@ -7,6 +7,15 @@ import EntityLogo from '@/components/EntityLogo'
 import { useAgentActivity } from '@/components/AgentActivityContext'
 import { useProtoState } from '@/components/ProtoStateContext'
 
+function buildActionSteps(connectedApps: string[]): string[] {
+  const steps: string[] = ['Retrieving task details from Entities']
+  if (connectedApps.includes('Minutes')) steps.push('Opening document in Minutes')
+  steps.push('Preparing task for processing')
+  if (connectedApps.includes('Boards NextGen')) steps.push('Updating status in Boards NextGen')
+  steps.push('Sending notification to stakeholders')
+  return steps
+}
+
 function LogoWithTooltip({ entityId }: { entityId: number }) {
   const entity = ENTITIES.find(e => e.id === entityId)!
   return (
@@ -31,11 +40,11 @@ function ActionItemModal({ item, onClose }: { item: ActionItem; onClose: () => v
         entityId: entity.id,
         entityShortName: entity.shortName,
         title: item.title,
+        workflowSteps: buildActionSteps(entity.connectedApps),
       })
       setTimeout(() => {
         agentActivity.completeJob(jobId)
-        setTimeout(() => agentActivity.removeJob(jobId), 4000)
-      }, 3000)
+      }, 30000)
     }
     onClose()
   }
