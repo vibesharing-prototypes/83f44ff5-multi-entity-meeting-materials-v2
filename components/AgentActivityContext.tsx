@@ -16,6 +16,8 @@ export interface AgentJob {
   sectionIndex?: number
   status: 'running' | 'done'
   startedAt: number
+  /** Ordered step labels to display in the progress widget */
+  workflowSteps?: string[]
 }
 
 interface AgentActivityContextValue {

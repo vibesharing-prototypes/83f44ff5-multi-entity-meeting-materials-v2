@@ -80,3 +80,15 @@
 .dark .hero-glow-calm     { background: radial-gradient(ellipse 90% 100% at 50% 0%, rgba(16,185,129,0.13) 0%, transparent 100%); }
 .dark .hero-glow-busy     { background: radial-gradient(ellipse 90% 100% at 50% 0%, rgba(245,158,11,0.16) 0%, transparent 100%); }
 .dark .hero-glow-critical { background: radial-gradient(ellipse 90% 100% at 50% 0%, rgba(220,38,38,0.22) 0%, transparent 100%); }
+
+/* Agent milestone stepper — pop animation when a step completes */
+@keyframes step-pop {
+  0%   { transform: scale(1); }
+  28%  { transform: scale(1.52); }
+  55%  { transform: scale(0.86); }
+  76%  { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+.step-pop {
+  animation: step-pop 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
