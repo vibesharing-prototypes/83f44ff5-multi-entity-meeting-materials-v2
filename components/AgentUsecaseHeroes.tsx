@@ -114,7 +114,7 @@ export default function AgentUsecaseHeroes() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-[1.35rem] leading-[1.25] text-slate-900 dark:text-zinc-100 mb-3 whitespace-pre-line">
+                <h3 className="font-sans font-semibold text-[1.1rem] leading-[1.25] text-slate-900 dark:text-zinc-100 mb-3 whitespace-pre-line">
                   {hero.title}
                 </h3>
 
