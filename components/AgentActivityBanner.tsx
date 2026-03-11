@@ -206,7 +206,7 @@ function AgentProgressWidget({ job, onDismiss }: { job: AgentJob; onDismiss: () 
             ? 'text-emerald-600 dark:text-emerald-500'
             : isStopped
             ? 'text-rose-500 dark:text-rose-400'
-            : 'text-slate-400 dark:text-zinc-600'
+            : 'text-slate-500 dark:text-zinc-600'
         }`}>
           {showDone ? 'Task Complete' : isStopped ? 'Process Interrupted' : 'Agent Working'}
         </span>
@@ -276,11 +276,11 @@ function AgentProgressWidget({ job, onDismiss }: { job: AgentJob; onDismiss: () 
           <div className="flex items-center gap-3 flex-shrink-0 ml-3">
             <button
               onClick={handleStop}
-              className="text-[11px] text-slate-300 dark:text-zinc-700 hover:text-rose-400 dark:hover:text-rose-500 underline underline-offset-2 transition-colors"
+              className="text-[11px] text-slate-500 dark:text-zinc-700 hover:text-rose-500 dark:hover:text-rose-500 underline underline-offset-2 transition-colors"
             >
               Stop
             </button>
-            <span className="text-[10px] text-slate-300 dark:text-zinc-700 tabular-nums">
+            <span className="text-[10px] text-slate-400 dark:text-zinc-700 tabular-nums">
               {Math.min(completedCount + 1, steps.length)}/{steps.length}
             </span>
           </div>
@@ -317,7 +317,7 @@ function AgentProgressWidget({ job, onDismiss }: { job: AgentJob; onDismiss: () 
             >
               Resume from here
             </button>
-            <span className="text-[10px] text-slate-200 dark:text-zinc-800">·</span>
+            <span className="text-[10px] text-slate-300 dark:text-zinc-800">·</span>
             <button
               onClick={handleRestart}
               className="text-[11px] text-slate-500 dark:text-zinc-400 hover:text-slate-700 dark:hover:text-zinc-200 underline underline-offset-2 transition-colors"
@@ -347,7 +347,7 @@ function AgentProgressWidget({ job, onDismiss }: { job: AgentJob; onDismiss: () 
                       ? 'text-slate-500 dark:text-zinc-400'
                       : i === stoppedAtStep
                       ? 'text-rose-500 dark:text-rose-400'
-                      : 'text-slate-300 dark:text-zinc-700'
+                      : 'text-slate-400 dark:text-zinc-700'
                   }>
                     {step}
                   </span>
@@ -463,7 +463,7 @@ export default function AgentActivityBanner() {
           />
         ) : cfg.workflow ? (
           <div className="flex flex-col items-center gap-3">
-            <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-400 dark:text-zinc-600">
+            <span className="text-[10px] font-semibold tracking-widest uppercase text-slate-500 dark:text-zinc-600">
               Response Workflow
             </span>
             <div className="flex items-center gap-1.5 flex-wrap justify-center">
@@ -479,7 +479,7 @@ export default function AgentActivityBanner() {
                           ? 'border-emerald-200 dark:border-emerald-800/60 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400'
                           : isCurrent
                           ? 'border-amber-200 dark:border-amber-800/60 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400'
-                          : 'border-slate-200 dark:border-zinc-800 bg-transparent text-slate-400 dark:text-zinc-600'
+                          : 'border-slate-200 dark:border-zinc-800 bg-transparent text-slate-500 dark:text-zinc-600'
                       }`}
                     >
                       {isComplete && (
@@ -493,7 +493,7 @@ export default function AgentActivityBanner() {
                       {step}
                     </div>
                     {i < cfg.workflow!.length - 1 && (
-                      <span className="text-slate-300 dark:text-zinc-700">
+                      <span className="text-slate-400 dark:text-zinc-700">
                         <ChevronRight />
                       </span>
                     )}
@@ -503,7 +503,7 @@ export default function AgentActivityBanner() {
             </div>
           </div>
         ) : (
-          <p className="text-center text-xs text-slate-400 dark:text-zinc-600">
+          <p className="text-center text-xs text-slate-500 dark:text-zinc-600">
             No items require review. Agents are running normally.
           </p>
         )}

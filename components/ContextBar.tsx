@@ -181,7 +181,7 @@ export default function ContextBar({ currentEntityId }: ContextBarProps) {
 
                     {/* Chevron */}
                     <svg
-                      className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-blue-400 dark:text-blue-600' : 'text-slate-300 dark:text-zinc-600'}`}
+                      className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-blue-400 dark:text-blue-600' : 'text-slate-400 dark:text-zinc-600'}`}
                       viewBox="0 0 16 16"
                       fill="none"
                       stroke="currentColor"

@@ -122,26 +122,26 @@ function EditSuggestionModal({
 
           {/* Affected section */}
           <div className="mb-4">
-            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-1.5">
+            <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
               Affected Section
             </p>
             <div className="flex items-center gap-2 flex-wrap">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 dark:bg-zinc-800 rounded-lg border border-slate-200 dark:border-zinc-700">
-                <svg className="w-3 h-3 text-slate-400 dark:text-zinc-500 flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                <svg className="w-3 h-3 text-slate-500 dark:text-zinc-500 flex-shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                   <rect x="3" y="2" width="10" height="12" rx="1.5" />
                   <path d="M6 6h4M6 9h4M6 12h2" />
                 </svg>
                 <span className="text-xs text-slate-600 dark:text-zinc-300 font-medium">{suggestion.affectedSection}</span>
               </div>
               {isBatch && (
-                <span className="text-xs text-slate-400">across {suggestion.entities.length} board packs</span>
+                <span className="text-xs text-slate-500">across {suggestion.entities.length} board packs</span>
               )}
             </div>
           </div>
 
           {/* Proposed edit */}
           <div>
-            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-1.5">
+            <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
               Proposed Edit
             </p>
             <div className="bg-slate-50 dark:bg-zinc-800 rounded-xl p-4 border border-slate-200 dark:border-zinc-700">
@@ -156,7 +156,7 @@ function EditSuggestionModal({
         <div className="px-6 pb-6 pt-4 flex items-center justify-between border-t border-slate-100 dark:border-zinc-800">
           <button
             onClick={onClose}
-            className="text-sm text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 transition-colors"
+            className="text-sm text-slate-500 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors"
           >
             Cancel
           </button>
@@ -286,11 +286,11 @@ export default function EditSuggestions() {
               {/* Status indicator */}
               {isApplying && (
                 <div className="flex items-center gap-1.5 flex-shrink-0">
-                  <svg className="w-3.5 h-3.5 animate-spin text-slate-400" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <svg className="w-3.5 h-3.5 animate-spin text-slate-500" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                   </svg>
-                  <span className="text-[11px] text-slate-400">Applying…</span>
+                  <span className="text-[11px] text-slate-500">Applying…</span>
                 </div>
               )}
               {isApplied && (

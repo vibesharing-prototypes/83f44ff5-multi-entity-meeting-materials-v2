@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className="bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 font-sans antialiased flex flex-col h-screen overflow-hidden">
         <ThemeSync />
         <Script

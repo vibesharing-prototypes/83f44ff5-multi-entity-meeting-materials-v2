@@ -75,7 +75,7 @@ function ActionItemModal({ item, onClose }: { item: ActionItem; onClose: () => v
           <div className="flex items-center gap-3 mb-5 pr-8">
             <EntityLogo entity={entity} size="md" />
             <div className="min-w-0">
-              <p className="text-[11px] text-slate-400 leading-snug">{entity.country}</p>
+              <p className="text-[11px] text-slate-500 leading-snug">{entity.country}</p>
               <p className="text-sm font-semibold text-slate-900 dark:text-zinc-100 leading-snug truncate">{entity.name}</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ function ActionItemModal({ item, onClose }: { item: ActionItem; onClose: () => v
         <div className="px-6 pb-6 pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-zinc-800">
           <button
             onClick={onClose}
-            className="text-sm text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 transition-colors"
+            className="text-sm text-slate-500 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors"
           >
             Cancel
           </button>

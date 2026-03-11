@@ -16,14 +16,14 @@ function SectionEditorContent({ type, entity }: { type: SectionType; entity: Ent
           <EntityLogo entity={entity} size="lg" />
           <div>
             <p className="text-2xl font-bold text-slate-800 dark:text-zinc-100 uppercase tracking-wide">{entity.name}</p>
-            <p className="text-sm text-slate-400 mt-1">Board of Directors</p>
+            <p className="text-sm text-slate-500 mt-1">Board of Directors</p>
           </div>
           <div className="w-px h-8 bg-slate-200 dark:bg-zinc-700" />
           <div>
             <p className="text-xl font-semibold text-slate-700 dark:text-zinc-300">Board Pack · Q1 2026</p>
-            <p className="text-sm text-slate-400 mt-1">{entity.nextBoard}</p>
+            <p className="text-sm text-slate-500 mt-1">{entity.nextBoard}</p>
           </div>
-          <p className="text-xs text-slate-300 uppercase tracking-widest mt-2">Strictly Confidential</p>
+          <p className="text-xs text-slate-400 uppercase tracking-widest mt-2">Strictly Confidential</p>
         </div>
       )
 
@@ -386,7 +386,7 @@ export default function DocumentEditor({
             </svg>
             {entity.shortName}
           </button>
-          <svg className="w-3 h-3 text-slate-300 dark:text-zinc-600 flex-shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-3 h-3 text-slate-400 dark:text-zinc-600 flex-shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 2l4 4-4 4" />
           </svg>
           <span className="text-xs font-medium text-slate-700 dark:text-zinc-300 truncate">{section.title}</span>
@@ -483,7 +483,7 @@ export default function DocumentEditor({
                 onChange={e => setInputValue(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask about this section…"
-                className="flex-1 text-sm border border-slate-200 dark:border-zinc-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-zinc-600 placeholder:text-slate-300 dark:placeholder:text-zinc-600 bg-white dark:bg-zinc-800 text-slate-900 dark:text-zinc-100"
+                className="flex-1 text-sm border border-slate-200 dark:border-zinc-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-slate-400 dark:focus:ring-zinc-600 placeholder:text-slate-400 dark:placeholder:text-zinc-600 bg-white dark:bg-zinc-800 text-slate-900 dark:text-zinc-100"
               />
               <button
                 onClick={() => handleSendChat(inputValue)}
