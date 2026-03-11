@@ -43,7 +43,7 @@ export default function EntityPage({ params }: { params: { id: string } }) {
             >
               Home
             </Link>
-            <svg className="w-3.5 h-3.5 text-slate-300 dark:text-zinc-600 flex-shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="w-3.5 h-3.5 text-slate-400 dark:text-zinc-600 flex-shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 2l4 4-4 4" />
             </svg>
             <span className="text-sm font-semibold text-slate-800 dark:text-zinc-100">{entity.shortName}</span>

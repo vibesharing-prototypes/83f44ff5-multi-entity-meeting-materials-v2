@@ -210,7 +210,7 @@ function SectionModalContent({ section, entity }: { section: Section; entity: En
             <p className="text-sm font-semibold text-slate-700">Board Pack · Q1 2026</p>
             <p className="text-xs text-slate-400 mt-0.5">{entity.nextBoard}</p>
           </div>
-          <p className="text-[10px] text-slate-300 uppercase tracking-widest mt-1">Strictly Confidential</p>
+          <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Strictly Confidential</p>
         </div>
       )
 
