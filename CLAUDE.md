@@ -1,35 +1,45 @@
-# Prototype Name - Context for Claude
+# Prototype
 
-## Current State
-- Version: 0.1
-- Last updated: [Today's date]
+## Project Structure
 
-## What This Is
-Brief description of what this prototype does and demonstrates.
+This is a **Next.js 14 App Router** project deployed via [VibeSharing](https://vibesharing.app).
 
-## Who It's For
-The target user or audience for this prototype.
+- app/page.tsx — **Main page. This is what visitors see.** Edit this file.
+- app/layout.tsx — Root layout (HTML head, global styles)
+- app/globals.css — Tailwind CSS styles
+- public/ — Static assets (images, fonts, standalone HTML)
 
-## Key Decisions Made
-- Decision 1: Why we chose this approach
-- Decision 2: Trade-offs considered
+## IMPORTANT: File Placement Rules
 
-## Known Issues
-- [ ] Issue to address later
+**NEVER put HTML files in the repo root.** Next.js does not serve files from the root directory. They will be invisible to visitors.
 
-## Next Steps
-- [ ] What to build next
-- [ ] Features to add
+Where files go:
+- React components → app/page.tsx or app/components/
+- Static HTML files → public/ directory (served at /filename.html)
+- Images/assets → public/ directory
 
-## Build History
+If you have a standalone HTML prototype, either:
+1. **Preferred:** Convert it to a React component in app/page.tsx
+2. **Alternative:** Place it in public/prototype.html and update app/page.tsx to redirect:
+   ```tsx
+   import { redirect } from "next/navigation";
+   export default function Page() { redirect("/prototype.html"); }
+   ```
 
-### Session 1 - [Date]
-**What was built:**
-- Initial prototype setup
-- Basic UI components
+## Conventions
 
-**Decisions made:**
-- Chose [X] approach because [reason]
+- Next.js 14 (App Router) + Tailwind CSS
+- Keep prototypes self-contained — inline mock data, no external APIs
+- One page.tsx per prototype when possible
 
----
-*Exported on [date]*
+## Deployment
+
+Push to main. Vercel auto-deploys within ~30-60 seconds.
+
+```bash
+git add .
+git commit -m "Describe what changed"
+git push origin main
+```
+
+**Do NOT use vercel CLI, vercel deploy, zip upload, or any API endpoint. Just git push.**
